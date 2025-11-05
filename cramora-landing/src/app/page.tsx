@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, Star, Sparkles } from 'lucide-react';
+import { Check, Star, Sparkles, FileText, Target, Brain } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -43,36 +43,112 @@ export default function LandingPage() {
 
         {/* CTA Button */}
         <Button className="bg-[#493dc6] hover:bg-[#4438b9] text-white rounded-full px-6 py-2 font-semibold">
-          Get Access
+          Try Cramora
         </Button>
       </nav>
 
       {/* Hero Section */}
-      <section className="text-center py-24 px-6 bg-gradient-to-b from-[#493dc6] to-[#191545] text-white">
-        <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-5xl font-bold mb-6">
-          Study Smarter, Not Harder — with Cramora AI
+      <section
+        id="home"
+        className="text-center py-32 px-6 bg-white text-[#191545]"
+      >
+        {/* Rating Badge */}
+        <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-5 py-2 mb-6">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <Star
+              key={i}
+              className="w-5 h-5 text-[#493DC6] fill-[#493DC6]"
+            />
+          ))}
+          <span className="ml-2 text-sm font-medium text-[#191545]">
+            Top rated by beta testers
+          </span>
+        </div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-5xl font-bold mb-6 leading-tight max-w-4xl mx-auto"
+        >
+          Cramora AI is the fastest way to prep for an exam, even the night before
         </motion.h1>
-        <p className="max-w-2xl mx-auto mb-8 text-lg text-gray-200">
-          Your all-in-one AI study companion that creates 1-page cram sheets, predicts exam questions, and quizzes you instantly.
+
+        {/* Subtext */}
+        <p className="max-w-2xl mx-auto mb-10 text-lg text-gray-600">
+          Your AI-powered go to study tool that builds 1-page cram sheets,
+          predicts exam questions, and tests you instantly.
         </p>
-        <Button size="lg" className="bg-white text-[#493dc6] font-semibold rounded-full px-10 py-4 hover:bg-gray-100">
-          Join the Beta for Free
+
+        {/* CTA Button */}
+        <Button
+          size="lg"
+          className="bg-[#493DC6] hover:bg-[#4438b9] text-white font-semibold rounded-full px-10 py-4 transition-colors duration-200"
+        >
+          Try Now Free
         </Button>
-        <div className="flex justify-center mt-10 space-x-4">
-          {[1, 2, 3, 4, 5].map(i => <Star key={i} className="text-yellow-400 fill-yellow-400" />)}
-          <p className="ml-2">Loved by 100+ students</p>
+      </section>
+
+
+      {/* Features Section */}
+      <section id="features" className="py-28 px-6 bg-[#493DC6] text-white text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6">Powerful Features Built for Students</h2>
+          <p className="text-gray-200 mb-16 max-w-2xl mx-auto text-lg">
+            Everything you need to cram smarter, retain faster, and walk into exams feeling confident.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Feature 1 – Cram Hubs */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <div className="flex justify-center items-center w-14 h-14 bg-white/20 rounded-xl mx-auto mb-6">
+                <Sparkles className="text-white w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Cram Hubs</h3>
+              <p className="text-base text-gray-200 leading-relaxed">
+                Dump your notes, slides, and PDFs — our AI instantly finds the 20% of content that covers 80% of your exam.
+              </p>
+            </div>
+
+            {/* Feature 2 – 1-Page AI Summaries */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <div className="flex justify-center items-center w-14 h-14 bg-white/20 rounded-xl mx-auto mb-6">
+                <FileText className="text-white w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">1-Page AI Summaries</h3>
+              <p className="text-base text-gray-200 leading-relaxed">
+                Turn 50+ pages of notes into a one-page, bullet-point cram sheet — perfect for last-minute review.
+              </p>
+            </div>
+
+            {/* Feature 3 – Predicted Test Questions */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <div className="flex justify-center items-center w-14 h-14 bg-white/20 rounded-xl mx-auto mb-6">
+                <Target className="text-white w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Predicted Test Questions</h3>
+              <p className="text-base text-gray-200 leading-relaxed">
+                Get AI-generated questions based on your notes so you can focus on what’s most likely to be on the exam.
+              </p>
+            </div>
+
+            {/* Feature 4 – Quizlet-Style Practice */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <div className="flex justify-center items-center w-14 h-14 bg-white/20 rounded-xl mx-auto mb-6">
+                <Brain className="text-white w-7 h-7" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Quizlet-Style Practice</h3>
+              <p className="text-base text-gray-200 leading-relaxed">
+                Test yourself with fast, interactive questions and instant feedback — active recall made effortless.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-16 text-center bg-gray-50">
-        <p className="uppercase text-sm tracking-widest text-gray-500 mb-6">Trusted by Students From</p>
-        <div className="flex flex-wrap justify-center gap-10 opacity-70">
-          {['Harvard', 'Marist', 'Stanford', 'MIT', 'Yale'].map(uni => (
-            <span key={uni} className="text-xl font-semibold">{uni}</span>
-          ))}
-        </div>
-      </section>
+
+
 
       {/* Benefits Section */}
       <section id="benefits" className="py-20 px-6 text-center">
