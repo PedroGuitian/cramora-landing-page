@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,15 +9,42 @@ export default function LandingPage() {
   return (
     <div className="font-inter bg-white text-gray-900">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-6 py-4 shadow-sm sticky top-0 bg-white z-50">
-        <h1 className="text-2xl font-bold text-[#493dc6]">Cramora AI</h1>
-        <div className="space-x-6 hidden md:flex">
-          <a href="#benefits" className="hover:text-[#493dc6]">Benefits</a>
-          <a href="#how" className="hover:text-[#493dc6]">How it Works</a>
-          <a href="#pricing" className="hover:text-[#493dc6]">Pricing</a>
-          <a href="#faq" className="hover:text-[#493dc6]">FAQ</a>
+      <nav className="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/cramora-logo.png"
+            alt="Cramora AI Logo"
+            width={180}
+            height={50}
+            priority
+          />
         </div>
-        <Button className="bg-[#493dc6] hover:bg-[#332b8d] text-white rounded-full px-6">Join Beta</Button>
+
+        {/* Navigation Links */}
+        <div className="hidden md:flex space-x-8 text-gray-700 font-medium">
+          {[
+            { name: "Home", href: "#home" },
+            { name: "Features", href: "#features" },
+            { name: "Why Us?", href: "#why-us" },
+            { name: "Pricing", href: "#pricing" },
+            { name: "Testimonials", href: "#testimonials" },
+            { name: "FAQ", href: "#faq" },
+          ].map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-[#493dc6] transition-colors duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <Button className="bg-[#493dc6] hover:bg-[#4438b9] text-white rounded-full px-6 py-2 font-semibold">
+          Get Access
+        </Button>
       </nav>
 
       {/* Hero Section */}
