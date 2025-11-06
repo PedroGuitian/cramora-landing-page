@@ -90,7 +90,7 @@ export default function LandingPage() {
         </Button>
       </section>
 
-
+      
       {/* Features Section */}
       <section id="features" className="py-28 px-6 bg-[#493DC6] text-white text-center">
         <div className="max-w-6xl mx-auto">
@@ -143,6 +143,114 @@ export default function LandingPage() {
                 Test yourself with fast, interactive questions and instant feedback — active recall made effortless.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section
+        id="why-us"
+        className="py-28 px-6 bg-gray-50 text-center text-[#191545]"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6">Why Choose Cramora?</h2>
+          <p className="text-gray-600 mb-16 max-w-2xl mx-auto text-lg">
+            Here’s how Cramora stacks up against popular study tools like Chegg, Notion AI, and Quizlet.
+          </p>
+
+          {/* Comparison Table */}
+          <div className="overflow-x-auto pb-12">
+            <table className="min-w-[800px] mx-auto border-collapse rounded-xl overflow-hidden shadow-md">
+              <thead className="bg-[#493DC6] text-white">
+                <tr>
+                  <th className="py-4 px-6 text-left text-lg font-semibold">Feature</th>
+                  <th className="py-4 px-6 text-lg font-semibold">Cramora AI</th>
+                  <th className="py-4 px-6 text-lg font-semibold">Chegg</th>
+                  <th className="py-4 px-6 text-lg font-semibold">Notion AI</th>
+                  <th className="py-4 px-6 text-lg font-semibold">Quizlet</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white text-gray-700">
+              {[
+                ['AI-Powered Study Hubs (Cram Hubs)', true, false, false, false],
+                ['1-Page AI Summaries', true, false, true, false],
+                ['Predicted Test Questions', true, false, false, false],
+                ['Active Recall Practice (Quizlet-Style)', true, false, false, true],
+                ['All-in-One Study Workflow', true, false, false, false],
+                ['Pricing', 'Free', '$14.95/mo', '$10/mo', '$7.99/mo'],
+              ].map(([feature, cramora, chegg, notion, quizlet], i) => (
+                <tr
+                  key={i}
+                  className={`border-t border-gray-200 ${
+                    i % 2 === 0 ? 'bg-gray-50' : 'bg-white'
+                  }`}
+                >
+                  <td className="py-4 px-6 text-left font-medium">{feature}</td>
+
+                  {[cramora, chegg, notion, quizlet].map((val, j) => (
+                    <td key={j} className="py-4 px-6 text-center">
+                      {typeof val === 'boolean' ? (
+                        val ? (
+                          <Check className="text-green-500 w-5 h-5 mx-auto" />
+                        ) : (
+                          <span className="text-red-400 font-bold text-lg">×</span>
+                        )
+                      ) : (
+                        <span className="text-gray-700 font-medium">{val}</span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+
+              </tbody>
+            </table>
+          </div>
+
+          {/* Why Cramora Message */}
+          <p className="mt-5 text-2xl font-semibold text-[#191545] max-w-3xl mx-auto">
+            Because <span className="text-[#493DC6]">Cramora</span> is built for last-minute students who don’t have time to waste. Just drop your notes and walk into your exam prepared.
+          </p>
+
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="py-28 bg-gray-50 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold text-[#493DC6] mb-4">Simple Pricing</h2>
+          <p className="text-gray-600 mb-16 text-lg">
+            Since we’re in <span className="font-semibold text-[#493DC6]">beta</span>, all premium features are <strong>100% free — for now.</strong>
+          </p>
+
+          {/* Pricing Card */}
+          <div className="bg-white rounded-3xl shadow-lg p-10 max-w-md mx-auto border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+            <h3 className="text-3xl font-bold text-[#191545] mb-2">Free (Beta Access)</h3>
+            <p className="text-gray-500 mb-6">Get every premium feature without paying a cent during beta.</p>
+            <div className="text-5xl font-extrabold text-[#493DC6] mb-8">$0<span className="text-lg font-medium text-gray-500">/month</span></div>
+
+            <ul className="text-left space-y-4 mb-8">
+              {[
+                'AI-Powered Cram Hubs',
+                '1-Page AI Summaries',
+                'Predicted Test Questions',
+                'Quizlet-Style Practice',
+                'Unlimited File Uploads',
+                'Access to Future Premium Tools',
+              ].map((feature, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span className="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Button
+              size="lg"
+              className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+            >
+              Join Free Beta
+            </Button>
           </div>
         </div>
       </section>
