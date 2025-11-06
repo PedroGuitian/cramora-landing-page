@@ -220,7 +220,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold text-[#493DC6] mb-4">Simple Pricing</h2>
           <p className="text-gray-600 mb-16 text-lg">
-            Since we’re in <span className="font-semibold text-[#493DC6]">beta</span>, all premium features are <strong>100% free — for now.</strong>
+            Since we’re in <span className="font-semibold text-[#493DC6]">beta</span>, all premium features are <strong>100% free for now.</strong>
           </p>
 
           {/* Pricing Card */}
@@ -236,7 +236,7 @@ export default function LandingPage() {
                 'Predicted Test Questions',
                 'Quizlet-Style Practice',
                 'Unlimited File Uploads',
-                'Access to Future Premium Tools',
+                'Try Every Premium Feature During Beta',
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -256,89 +256,50 @@ export default function LandingPage() {
       </section>
 
 
+      {/* Testimonials / Student Opinions */}
+      <section id="testimonials" className="py-28 px-6 bg-[#493DC6] text-white text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-6">What Are Students Saying?</h2>
+          <p className="text-gray-200 mb-16 max-w-2xl mx-auto text-lg">
+            Real students share how stressful last-minute studying can be — and why smarter tools like Cramora are needed.
+          </p>
 
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <p className="italic text-gray-100 mb-4">
+                “Every finals week I tell myself I’ll start earlier, but somehow I’m still cramming at 2 AM the night before.”
+              </p>
+              <p className="text-sm text-gray-300">— Reddit user, <span className="italic">r/CollegeLife</span></p>
+            </div>
 
-      {/* Benefits Section */}
-      <section id="benefits" className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#493dc6] mb-12">Why Students Love Cramora</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {['AI Cram Sheets', 'Smart Question Generator', 'Instant Feedback'].map((title, i) => (
-            <Card key={i} className="shadow-md border-none">
-              <CardContent className="p-6">
-                <Sparkles className="w-10 h-10 text-[#493dc6] mx-auto mb-4" />
-                <h3 className="font-semibold text-xl mb-2">{title}</h3>
-                <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod.</p>
-              </CardContent>
-            </Card>
-          ))}
+            {/* Card 2 */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <p className="italic text-gray-100 mb-4">
+                “I spend more time organizing notes than actually studying them. I just want something that does that part for me.”
+              </p>
+              <p className="text-sm text-gray-300">— Student on <span className="italic">Quora</span></p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm hover:-translate-y-2 hover:bg-white/15 transition-all duration-300 shadow-lg">
+              <p className="italic text-gray-100 mb-4">
+                “Cramming isn’t about laziness — it’s about survival. Some classes give you way too much to cover.”
+              </p>
+              <p className="text-sm text-gray-300">— College blog article, <span className="italic">Medium</span></p>
+            </div>
+          </div>
+
+          {/* Message Below Cards */}
+          <p className="mt-16 text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Students everywhere struggle to prepare efficiently under pressure. 
+            <span className="font-semibold text-white"> Cramora AI</span> turns chaos into clarity — helping you focus on what really matters the night before an exam.
+          </p>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how" className="py-20 bg-gray-50 px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#493dc6] mb-12">How It Works</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {['Upload Notes', 'Generate Cram Sheet', 'Take Smart Quiz'].map((step, i) => (
-            <Card key={i} className="border-none shadow-sm">
-              <CardContent className="p-6">
-                <div className="text-[#493dc6] text-5xl font-bold mb-4">{i + 1}</div>
-                <h3 className="font-semibold text-xl mb-2">{step}</h3>
-                <p className="text-gray-600">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
 
-      {/* Comparison Section */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#493dc6] mb-12">Cramora vs Others</h2>
-        <div className="overflow-x-auto">
-          <table className="min-w-[600px] mx-auto border-collapse border border-gray-200">
-            <thead className="bg-[#493dc6] text-white">
-              <tr>
-                <th className="py-3 px-6 text-left">Feature</th>
-                <th className="py-3 px-6">Cramora</th>
-                <th className="py-3 px-6">Others</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ['AI Cram Sheets', true, false],
-                ['Predicted Exam Questions', true, false],
-                ['Instant Feedback Quizzes', true, false],
-                ['File-Based Study Hub', true, false],
-                ['Free Beta Access', true, false]
-              ].map(([feature, cramora, others], i) => (
-                <tr key={i} className="border-t border-gray-200">
-                  <td className="py-3 px-6 text-left">{feature}</td>
-                  <td className="py-3 px-6">{cramora ? <Check className="text-green-500 mx-auto" /> : ''}</td>
-                  <td className="py-3 px-6">{others ? <Check className="text-green-500 mx-auto" /> : '—'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="py-20 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold text-[#493dc6] mb-6">Simple Pricing</h2>
-        <p className="text-gray-600 mb-10">Cramora AI is <strong>100% free during beta</strong>. Join today and start studying smarter!</p>
-        <Button size="lg" className="bg-[#493dc6] text-white rounded-full px-10 py-4 hover:bg-[#332b8d]">Join Free Beta</Button>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#493dc6] mb-12">What Students Say</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {['“Cramora saved my finals week!”', '“AI-generated notes are a game changer.”', '“Feels like ChatGPT for studying.”'].map((quote, i) => (
-            <Card key={i} className="shadow-sm border-none">
-              <CardContent className="p-6 italic">{quote}</CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+    
 
       {/* FAQ */}
       <section id="faq" className="py-20 bg-gray-50 px-6">
