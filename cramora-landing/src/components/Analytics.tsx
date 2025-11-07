@@ -1,27 +1,43 @@
 'use client';
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
+// 👇 Declare gtag so TypeScript knows it exists
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 export default function Analytics() {
-  const [hasConsent, setHasConsent] = useState(false);
-
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
-    if (consent === "true") setHasConsent(true);
+    if (consent === "true" && typeof window !== "undefined" && window.gtag) {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
   }, []);
 
   return (
     <>
-      {/* Load GA and Consent Mode immediately */}
+      {/* Load GA script first */}
       <Script
-        id="google-consent-mode"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-44MH7FHFWE"
         strategy="afterInteractive"
-      >
+      />
+
+      {/* Initialize Consent Mode and GA config */}
+      <Script id="google-consent-mode" strategy="afterInteractive">
         {`
-          // Initialize default (no consent) state
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
 
+          // Default state: anonymous tracking only
           gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -29,40 +45,20 @@ export default function Analytics() {
             'analytics_storage': 'denied'
           });
 
-          // Initialize GA4
           gtag('js', new Date());
           gtag('config', 'G-44MH7FHFWE', {
             page_path: window.location.pathname,
           });
         `}
       </Script>
-
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-44MH7FHFWE"
-        strategy="afterInteractive"
-      />
-
-      {/* When consent is accepted, update GA settings */}
-      {hasConsent && (
-        <Script id="google-consent-update" strategy="afterInteractive">
-          {`
-            gtag('consent', 'update', {
-              'ad_storage': 'granted',
-              'ad_user_data': 'granted',
-              'ad_personalization': 'granted',
-              'analytics_storage': 'granted'
-            });
-          `}
-        </Script>
-      )}
     </>
   );
 }
 
 
-// 'use client';
 
+
+// 'use client';
 // import Script from "next/script";
 // import { useEffect, useState } from "react";
 
@@ -74,24 +70,52 @@ export default function Analytics() {
 //     if (consent === "true") setHasConsent(true);
 //   }, []);
 
-//   if (!hasConsent) return null;
-
 //   return (
 //     <>
+//       {/* Load GA and Consent Mode immediately */}
 //       <Script
-//         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+//         id="google-consent-mode"
 //         strategy="afterInteractive"
-//       />
-//       <Script id="google-analytics" strategy="afterInteractive">
+//       >
 //         {`
+//           // Initialize default (no consent) state
 //           window.dataLayer = window.dataLayer || [];
 //           function gtag(){dataLayer.push(arguments);}
+
+//           gtag('consent', 'default', {
+//             'ad_storage': 'denied',
+//             'ad_user_data': 'denied',
+//             'ad_personalization': 'denied',
+//             'analytics_storage': 'denied'
+//           });
+
+//           // Initialize GA4
 //           gtag('js', new Date());
-//           gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+//           gtag('config', 'G-44MH7FHFWE', {
 //             page_path: window.location.pathname,
 //           });
 //         `}
 //       </Script>
+
+//       <Script
+//         async
+//         src="https://www.googletagmanager.com/gtag/js?id=G-44MH7FHFWE"
+//         strategy="afterInteractive"
+//       />
+
+//       {/* When consent is accepted, update GA settings */}
+//       {hasConsent && (
+//         <Script id="google-consent-update" strategy="afterInteractive">
+//           {`
+//             gtag('consent', 'update', {
+//               'ad_storage': 'granted',
+//               'ad_user_data': 'granted',
+//               'ad_personalization': 'granted',
+//               'analytics_storage': 'granted'
+//             });
+//           `}
+//         </Script>
+//       )}
 //     </>
 //   );
 // }
