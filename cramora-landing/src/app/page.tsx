@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, Star, Sparkles, FileText, Target, Brain } from 'lucide-react';
+import CookieConsent from '@/components/CookieConsent';
 
 export default function LandingPage() {
   return (
@@ -371,9 +372,22 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#191545] text-white py-10 text-center">
+      <footer className="bg-[#191545] text-white py-10 text-center space-y-3">
         <p>&copy; {new Date().getFullYear()} Cramora AI. All rights reserved.</p>
+        <div className="space-x-4 text-sm">
+          <a href="/privacy" className="hover:underline text-gray-300">
+            Privacy Policy
+          </a>
+          <span className="text-gray-500">•</span>
+          <a href="/terms" className="hover:underline text-gray-300">
+            Terms of Service
+          </a>
+          <p>team@cramora.com</p>
+        </div>
       </footer>
+
+      <CookieConsent />
+
     </div>
   );
 }
