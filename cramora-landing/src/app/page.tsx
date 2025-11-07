@@ -298,23 +298,63 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-28 bg-gray-50 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold text-[#493DC6] mb-12">FAQs</h2>
+          <p className="text-gray-600 mb-12 text-lg">
+            Have questions about Cramora AI? Here’s everything you need to know before you start.
+          </p>
 
-    
-
-      {/* FAQ */}
-      <section id="faq" className="py-20 bg-gray-50 px-6">
-        <h2 className="text-4xl font-bold text-[#493dc6] text-center mb-12">FAQs</h2>
-        <div className="max-w-3xl mx-auto space-y-6">
-          {[
-            ['What is Cramora AI?', 'An AI-powered study companion that helps you prepare for exams efficiently.'],
-            ['Is it really free?', 'Yes! Cramora AI is free during its beta phase.'],
-            ['Can I upload multiple files?', 'Yes, you can upload multiple study files to your Cram Hub.']
-          ].map(([q, a], i) => (
-            <div key={i} className="bg-white shadow-sm rounded-xl p-6">
-              <h3 className="font-semibold text-lg mb-2">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
-          ))}
+          {/* Accordion */}
+          <div className="space-y-4 text-left">
+            {[
+              {
+                question: "What exactly is Cramora AI?",
+                answer:
+                  "Cramora AI is your personal AI-powered study assistant that helps you prepare for exams efficiently. Upload your notes or slides, and it automatically creates one-page cram sheets, predicts likely exam questions, and generates practice quizzes so you can study smarter, not longer.",
+              },
+              {
+                question: "How do I upload my study material?",
+                answer:
+                  "Simply drag and drop your files—PDFs, notes, or slides—into your Cram Hub. Once uploaded, Cramora’s AI will process the content and organize it into study-friendly summaries and questions.",
+              },
+              {
+                question: "Will Cramora AI guarantee better grades?",
+                answer:
+                  "While no tool can promise guaranteed results, Cramora dramatically improves your focus and retention by helping you identify and review the most important information right before your exam.",
+              },
+              {
+                question: "Is there a free trial?",
+                answer:
+                  "Yes! Cramora AI is completely free during our beta phase. You can try all premium features without any payment required.",
+              },
+              {
+                question: "How much will it cost after the trial?",
+                answer:
+                  "Pricing will be announced after beta, but our goal is to keep it affordable for students—around the cost of a coffee each month.",
+              },
+            ].map(({ question, answer }, i) => (
+              <details
+                key={i}
+                className="group bg-white shadow-sm rounded-xl p-6 transition-all duration-200 hover:shadow-md"
+              >
+                <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#191545]">
+                  <span>{question}</span>
+                  <svg
+                    className="w-5 h-5 text-[#493DC6] transition-transform duration-200 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-gray-600 leading-relaxed">{answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
