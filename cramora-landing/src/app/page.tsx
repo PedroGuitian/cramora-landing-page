@@ -28,7 +28,7 @@ export default function LandingPage() {
             { name: "Features", href: "#features" },
             { name: "Why Us?", href: "#why-us" },
             { name: "Pricing", href: "#pricing" },
-            { name: "Testimonials", href: "#testimonials" },
+            { name: "The Problem", href: "#the-problem" },
             { name: "FAQ", href: "#faq" },
           ].map((link) => (
             <a
@@ -77,8 +77,11 @@ export default function LandingPage() {
 
         {/* Subtext */}
         <p className="max-w-2xl mx-auto mb-10 text-lg text-gray-600">
-          Your AI-powered go to study tool that builds 1-page cram sheets,
-          predicts exam questions, and tests you instantly.
+          Your all-in-one study tool that turns messy notes 
+          into 1-page summaries, predicts test questions, and helps you memorize faster
+          through active recall.
+          {/* Your AI-powered go to study tool that builds 1-page cram sheets,
+          predicts exam questions, and tests you instantly. */}
         </p>
 
         {/* CTA Button */}
@@ -86,7 +89,7 @@ export default function LandingPage() {
           size="lg"
           className="bg-[#493DC6] hover:bg-[#4438b9] text-white font-semibold rounded-full px-10 py-4 transition-colors duration-200"
         >
-          Try Now Free
+          Try It Free
         </Button>
       </section>
 
@@ -96,7 +99,8 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-6">Powerful Features Built for Students</h2>
           <p className="text-gray-200 mb-16 max-w-2xl mx-auto text-lg">
-            Everything you need to cram smarter, retain faster, and walk into exams feeling confident.
+            Everything you need to cram smart, not hard.
+            {/* Everything you need to cram smarter, retain faster, and walk into exams feeling confident. */}
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -107,7 +111,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Cram Hubs</h3>
               <p className="text-base text-gray-200 leading-relaxed">
-                Dump your notes, slides, and PDFs — our AI instantly finds the 20% of content that covers 80% of your exam.
+                Dump your notes as PDFs - our AI instantly finds the 20% of content that covers 80% of your exam.
               </p>
             </div>
 
@@ -118,7 +122,8 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">1-Page AI Summaries</h3>
               <p className="text-base text-gray-200 leading-relaxed">
-                Turn 50+ pages of notes into a one-page, bullet-point cram sheet — perfect for last-minute review.
+                Turn 10+ pages of text into a single, clean cram sheet that’s actually readable. 
+                Perfect for reviewing on the bus, before class, or minutes before the exam.
               </p>
             </div>
 
@@ -129,7 +134,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Predicted Test Questions</h3>
               <p className="text-base text-gray-200 leading-relaxed">
-                Get AI-generated questions based on your notes so you can focus on what’s most likely to be on the exam.
+                Get AI-generated questions based on your notes so you can study what’s most likely to show up on your test.
               </p>
             </div>
 
@@ -140,7 +145,7 @@ export default function LandingPage() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Quizlet-Style Practice</h3>
               <p className="text-base text-gray-200 leading-relaxed">
-                Test yourself with fast, interactive questions and instant feedback — active recall made effortless.
+                Test yourself with fast, interactive questions and instant feedback. Active recall made effortless.
               </p>
             </div>
           </div>
@@ -173,8 +178,8 @@ export default function LandingPage() {
               <tbody className="bg-white text-gray-700">
               {[
                 ['AI-Powered Study Hubs (Cram Hubs)', true, false, false, false],
-                ['1-Page AI Summaries', true, false, true, false],
-                ['Predicted Test Questions', true, false, false, false],
+                ['1-Page AI Summaries', true, false, true, true],
+                ['Predicted Test Questions', true, true, false, true],
                 ['Active Recall Practice (Quizlet-Style)', true, false, false, true],
                 ['All-in-One Study Workflow', true, false, false, false],
                 ['Pricing', 'Free', '$14.95/mo', '$10/mo', '$7.99/mo'],
@@ -256,12 +261,12 @@ export default function LandingPage() {
       </section>
 
 
-      {/* Testimonials / Student Opinions */}
-      <section id="testimonials" className="py-28 px-6 bg-[#493DC6] text-white text-center">
+      {/* The Problem / Student Opinions */}
+      <section id="the-problem" className="py-28 px-6 bg-[#493DC6] text-white text-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-6">What Are Students Saying?</h2>
           <p className="text-gray-200 mb-16 max-w-2xl mx-auto text-lg">
-            Real students share how stressful last-minute studying can be — and why smarter tools like Cramora are needed.
+            Real students share how stressful last-minute studying can be and why smarter tools like Cramora are needed.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -293,7 +298,7 @@ export default function LandingPage() {
           {/* Message Below Cards */}
           <p className="mt-16 text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Students everywhere struggle to prepare efficiently under pressure. 
-            <span className="font-semibold text-white"> Cramora AI</span> turns chaos into clarity — helping you focus on what really matters the night before an exam.
+            <span className="font-semibold text-white"> Cramora AI</span> turns chaos into clarity, helping you focus on what really matters the night before an exam.
           </p>
         </div>
       </section>
@@ -312,12 +317,12 @@ export default function LandingPage() {
               {
                 question: "What exactly is Cramora AI?",
                 answer:
-                  "Cramora AI is your personal AI-powered study assistant that helps you prepare for exams efficiently. Upload your notes or slides, and it automatically creates one-page cram sheets, predicts likely exam questions, and generates practice quizzes so you can study smarter, not longer.",
+                  "Cramora AI is your all-in-one AI-powered study tool that helps you prepare for exams efficiently. Upload your notes as PDFs, and it automatically creates one-page cram sheets, predicts likely exam questions, and generates practice quizzes so you can study smarter, not longer.",
               },
               {
                 question: "How do I upload my study material?",
                 answer:
-                  "Simply drag and drop your files—PDFs, notes, or slides—into your Cram Hub. Once uploaded, Cramora’s AI will process the content and organize it into study-friendly summaries and questions.",
+                  "Simply drag and drop your notes as PDFs into your Cram Hub. Once uploaded, Cramora’s AI will process the content and organize it into study-friendly summaries and questions.",
               },
               {
                 question: "Will Cramora AI guarantee better grades?",
@@ -360,8 +365,8 @@ export default function LandingPage() {
 
       {/* CTA Section */}
       <section className="py-20 text-center bg-gradient-to-r from-[#493dc6] to-[#332b8d] text-white">
-        <h2 className="text-4xl font-bold mb-6">Join 100+ Students Already Using Cramora</h2>
-        <p className="mb-8 text-lg">Start studying smarter today — free during beta.</p>
+        <h2 className="text-4xl font-bold mb-6">Join Cramora today and see results for yourself</h2>
+        <p className="mb-8 text-lg">Try for free during beta.</p>
         <Button size="lg" className="bg-white text-[#493dc6] rounded-full px-10 py-4 font-semibold hover:bg-gray-100">Join Free Beta</Button>
       </section>
 
