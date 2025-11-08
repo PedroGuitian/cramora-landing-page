@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, Star, Sparkles, FileText, Target, Brain } from 'lucide-react';
 import CookieConsent from '@/components/CookieConsent';
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -43,9 +44,15 @@ export default function LandingPage() {
         </div>
 
         {/* CTA Button */}
-        <Button className="bg-[#493dc6] hover:bg-[#4438b9] text-white rounded-full px-6 py-2 font-semibold">
-          Try Cramora
-        </Button>
+        <a
+          href="https://cramora-ai.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button className="bg-[#493dc6] hover:bg-[#4438b9] text-white rounded-full px-6 py-2 font-semibold">
+            Try Cramora
+          </Button>
+        </a>
       </nav>
 
       {/* Hero Section */}
