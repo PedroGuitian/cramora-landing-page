@@ -93,12 +93,18 @@ export default function LandingPage() {
         </p>
 
         {/* CTA Button */}
-        <Button
-          size="lg"
-          className="bg-[#493DC6] hover:bg-[#4438b9] text-white font-semibold rounded-full px-10 py-4 transition-colors duration-200"
+        <a
+          href="https://cramora-ai.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Try It Free
-        </Button>
+          <Button
+            size="lg"
+            className="bg-[#493DC6] hover:bg-[#4438b9] text-white font-semibold rounded-full px-10 py-4 transition-colors duration-200"
+          >
+            Try It Free
+          </Button>
+        </a>
       </section>
 
       
@@ -258,12 +264,18 @@ export default function LandingPage() {
               ))}
             </ul>
 
-            <Button
-              size="lg"
-              className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+            <a
+              href="https://cramora-ai.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Join Free Beta
-            </Button>
+              <Button
+                size="lg"
+                className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+              >
+                Join Free Beta
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -375,7 +387,13 @@ export default function LandingPage() {
       <section className="py-20 text-center bg-gradient-to-r from-[#493dc6] to-[#332b8d] text-white">
         <h2 className="text-4xl font-bold mb-6">Join Cramora today and see results for yourself</h2>
         <p className="mb-8 text-lg">Try for free during beta.</p>
-        <Button size="lg" className="bg-white text-[#493dc6] rounded-full px-10 py-4 font-semibold hover:bg-gray-100">Join Free Beta</Button>
+        <a
+          href="https://cramora-ai.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button size="lg" className="bg-white text-[#493dc6] rounded-full px-10 py-4 font-semibold hover:bg-gray-100">Join Free Beta</Button>
+        </a>
       </section>
 
       {/* Footer */}
