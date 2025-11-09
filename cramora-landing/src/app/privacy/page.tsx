@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-semibold text-[#191545] mt-8">1. Information We Collect</h2>
           <ul className="list-disc ml-6">
-            <li><strong>Account Information:</strong> Name, email, and password when you sign up.</li>
+            <li><strong>Account Information:</strong> Email and password when you sign up.</li>
             <li><strong>Uploaded Files:</strong> Study materials (PDFs, notes, etc.) that you upload to generate summaries or questions.</li>
             <li><strong>Usage Data:</strong> Basic analytics such as page visits, browser type, and time spent on the site.</li>
           </ul>
@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
             <li>Request account deletion at any time.</li>
           </ul>
           <p>
-            To make a request, contact us at <strong>privacy@cramora.com</strong>.
+            To make a request, contact us at <strong>team@cramora.com</strong>.
           </p>
 
           <h2 className="text-2xl font-semibold text-[#191545] mt-8">6. Cookies</h2>
@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-semibold text-[#191545] mt-8">7. Children’s Privacy</h2>
           <p>
-            Cramora AI is designed for college students aged 16 and older. 
+            Cramora AI is designed for high school and college students aged 16 and older. 
             We do not knowingly collect personal data from children under 16.
           </p>
 
@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
           <p>
             For privacy-related questions or requests, please email us at{" "}
             <a href="mailto:privacy@cramora.com" className="text-[#493DC6] underline">
-              privacy@cramora.com
+              team@cramora.com
             </a>.
           </p>
         </div>
