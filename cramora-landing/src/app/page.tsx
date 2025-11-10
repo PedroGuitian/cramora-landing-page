@@ -407,7 +407,7 @@ export default function LandingPage() {
           <a href="/terms" className="hover:underline text-gray-300">
             Terms of Service
           </a>
-          <p>team@cramora.com</p>
+          <p><strong>team@cramora.com</strong></p>
         </div>
       </footer>
 
