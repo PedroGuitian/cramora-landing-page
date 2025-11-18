@@ -45,7 +45,7 @@ export default function LandingPage() {
 
         {/* CTA Button */}
         <a
-          href="https://cramora-ai.onrender.com"
+          href="https://app.cramora.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -94,7 +94,7 @@ export default function LandingPage() {
 
         {/* CTA Button */}
         <a
-          href="https://cramora-ai.onrender.com"
+          href="https://app.cramora.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -265,7 +265,7 @@ export default function LandingPage() {
             </ul>
 
             <a
-              href="https://cramora-ai.onrender.com"
+              href="https://app.cramora.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -388,7 +388,7 @@ export default function LandingPage() {
         <h2 className="text-4xl font-bold mb-6">Join Cramora today and see results for yourself</h2>
         <p className="mb-8 text-lg">Try for free during beta.</p>
         <a
-          href="https://cramora-ai.onrender.com"
+          href="https://app.cramora.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
