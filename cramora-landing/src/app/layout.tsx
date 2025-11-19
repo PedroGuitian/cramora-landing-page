@@ -32,11 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Favicon */}
-        <link rel="icon" href="/CramoraAI_Logo.png" sizes="any" />
-        <link rel="shortcut icon" href="/CramoraAI_Logo.png" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
