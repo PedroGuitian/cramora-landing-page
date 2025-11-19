@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     "Cramora AI converts messy notes into 1-page cram sheets, predicts test questions, and helps you study faster.",
   applicationName: "Cramora AI",
   icons: {
-    icon: "/CramoraAI_Logo.png",
-    shortcut: "/CramoraAI_Logo.png",
-    apple: "/CramoraAI_Logo.png",
+    icon: "/CramoraAI.png",
+    shortcut: "/CramoraAI.png",
+    apple: "/CramoraAI.png",
   },
   openGraph: {
     title: "Cramora AI – The Fastest Way to Prep for Exams",
