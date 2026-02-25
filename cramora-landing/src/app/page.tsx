@@ -235,49 +235,97 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-28 bg-gray-50 text-center">
-        <div className="max-w-4xl mx-auto">
+      <section id="pricing" className="py-28 bg-gray-50 text-center px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-5xl font-bold text-[#493DC6] mb-4">Simple Pricing</h2>
           <p className="text-gray-600 mb-16 text-lg">
-            Since we’re in <span className="font-semibold text-[#493DC6]">beta</span>, all premium features are <strong>100% free for now.</strong>
+            All of our premium features at a price every student can afford (Costs less than a cup of coffee)
+            {/* Since we’re in <span className="font-semibold text-[#493DC6]">beta</span>, all premium features are <strong>100% free for now.</strong> */}
           </p>
 
-          {/* Pricing Card */}
-          <div className="bg-white rounded-3xl shadow-lg p-10 max-w-md mx-auto border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-3xl font-bold text-[#191545] mb-2">Free (Beta Access)</h3>
-            <p className="text-gray-500 mb-6">Get every premium feature without paying a cent during beta.</p>
-            <div className="text-5xl font-extrabold text-[#493DC6] mb-8">$0<span className="text-lg font-medium text-gray-500">/month</span></div>
+          {/* Pricing Cards Wrapper */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            {/* Monthly */}
+            <div className="bg-white rounded-3xl shadow-lg p-10 border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex flex-col w-full">
+              <p className="text-gray-500 mb-6">3-day free trial. Cancel anytime</p>
+              <div className="text-5xl font-extrabold text-[#493DC6] mb-8">
+                $3.99
+                <span className="text-lg font-medium text-gray-500">/month</span>
+              </div>
 
-            <ul className="text-left space-y-4 mb-8">
-              {[
-                'AI-Powered Cram Hubs',
-                '1-Page AI Summaries',
-                'Predicted Test Questions',
-                'Quizlet-Style Practice',
-                'Unlimited File Uploads',
-                'Try Every Premium Feature During Beta',
-              ].map((feature, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
+              <ul className="text-left space-y-4 mb-8 flex-grow">
+                {[
+                  'AI-Powered Cram Hubs',
+                  '1-Page AI Summaries',
+                  'Predicted Test Questions',
+                  'Quizlet-Style Practice',
+                  'Unlimited File Uploads',
+                  'Try Every Premium Feature During Beta',
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-            <a
-              href="https://app.cramora.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+              <a
+                href="https://app.cramora.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto"
               >
-                Join Free Beta
-              </Button>
-            </a>
+                <Button
+                  size="lg"
+                  className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+                >
+                  Start free trial
+                </Button>
+              </a>
+            </div>
+
+            {/* Yearly */}
+            <div className="bg-white rounded-3xl shadow-lg p-10 border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex flex-col w-full">
+              <h3 className="text-3xl font-bold text-[#191545] mb-2">Premium Yearly</h3>
+              <p className="text-gray-500 mb-6">3-day free trial. Cancel anytime</p>
+              <div className="text-5xl font-extrabold text-[#493DC6] mb-8">
+                $19.99
+                <span className="text-lg font-medium text-gray-500">
+                  /year ($1.67/month)
+                </span>
+              </div>
+
+              <ul className="text-left space-y-4 mb-8 flex-grow">
+                {[
+                  'Everything in Monthly',
+                  '58% discount vs the Monthly plan',
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://app.cramora.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto"
+              >
+                <Button
+                  size="lg"
+                  className="bg-[#493DC6] hover:bg-[#3b34a0] text-white rounded-full px-10 py-4 font-semibold w-full"
+                >
+                  Start free trial
+                </Button>
+              </a>
+            </div>
+
           </div>
         </div>
+        
       </section>
 
 
