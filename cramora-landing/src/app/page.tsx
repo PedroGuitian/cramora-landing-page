@@ -261,7 +261,6 @@ export default function LandingPage() {
                   'Predicted Test Questions',
                   'Quizlet-Style Practice',
                   'Unlimited File Uploads',
-                  'Try Every Premium Feature During Beta',
                 ].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
