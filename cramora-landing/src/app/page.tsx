@@ -248,6 +248,7 @@ export default function LandingPage() {
             
             {/* Monthly */}
             <div className="bg-white rounded-3xl shadow-lg p-10 border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex flex-col w-full">
+              <h3 className="text-3xl font-bold text-[#191545] mb-2">Premium Monthly</h3>
               <p className="text-gray-500 mb-6">3-day free trial. Cancel anytime</p>
               <div className="text-5xl font-extrabold text-[#493DC6] mb-8">
                 $3.99
